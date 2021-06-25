@@ -1,0 +1,190 @@
+For COnfiguration
+
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+from GUI.GUI_Function import Add_Index, zero_one_Index, Add_Combo_Item
+
+from GUI import GUI_Function
+
+DEFAULT = GUI_Function.Set_Default_Live_Plot
+LIVE = GUI_Function.Set_Live_Plot
+HISTORY = GUI_Function.Set_History_plot
+BATTERY = GUI_Function.Set_Battery_plot
+
+from GUI import GUI_Config
+COMMON = GUI_Config.SENSOR_COMMON
+COMMON_SINGLE = GUI_Config.SENSOR_COMMON_SINGLE
+FAST = GUI_Config.SENSOR_FAST
+DESC = GUI_Config.DESCRIPTION
+
+
+For UI_Form_GUI
+
+        #Background-color
+        self.TabWidget_information.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.scrollArea_plot_live.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.scrollArea_plot_history.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.frame_indikator_battery.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.Frame_value_score.setStyleSheet("background-color: rgb(255, 255, 255);")
+        
+
+        # Live Tab
+        Add_Combo_Item(COMMON, 'ATRH', self.comboBox_ATRH_live)
+        Add_Combo_Item(COMMON, 'Anemometer', self.comboBox_Anemometer_live)
+        Add_Combo_Item(COMMON_SINGLE, 'Linear_Displacement', self.comboBox_Displacement_live)
+        Add_Combo_Item(COMMON_SINGLE, 'Horizontal_Inclinometer', self.comboBox_Hinclinometer_live)
+        Add_Combo_Item(COMMON_SINGLE, 'Vertical_Inclinometer', self.comboBox_VInclinometer_live)
+        Add_Combo_Item(COMMON_SINGLE,'Frame_Strain_Gauge',self.comboBox_FSG_live)
+        Add_Combo_Item(COMMON_SINGLE,'Hanger_Strain_Gauge',self.comboBox_HSG_live)
+        Add_Combo_Item(COMMON_SINGLE,'Seismometer',self.comboBox_Seismometer_live)
+        Add_Combo_Item(COMMON_SINGLE,'Thermistor',self.comboBox_Thermistor_live)
+        Add_Combo_Item(FAST, 'Frame_Vibrometer', self.comboBox_Frame_Accelerometer_live)
+        Add_Combo_Item(FAST, 'Hanger_Vibrometer', self.comboBox_Hanger_Accelerometer_live)
+
+        # History Tab
+        Add_Combo_Item(COMMON, 'ATRH', self.comboBox_ATRH_history)
+        Add_Combo_Item(COMMON, 'Anemometer', self.comboBox_Anemometer_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Linear_Displacement', self.comboBox_Displacement_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Horizontal_Inclinometer', self.comboBox_Hinclinometer_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Vertical_Inclinometer', self.comboBox_VInclinometer_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Frame_Strain_Gauge', self.comboBox_FSG_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Hanger_Strain_Gauge', self.comboBox_HSG_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Seismometer', self.comboBox_Seismometer_history)
+        Add_Combo_Item(COMMON_SINGLE, 'Thermistor', self.comboBox_Thermistor_history)
+        Add_Combo_Item(FAST, 'Frame_Vibrometer', self.comboBox_Frame_Accelerometer_history)
+        Add_Combo_Item(FAST, 'Hanger_Vibrometer', self.comboBox_Hanger_Accelerometer_history)
+        
+        # Battery Tab
+        Add_Combo_Item(COMMON, 'ATRH', self.comboBox_ATRH_battery)
+        Add_Combo_Item(COMMON, 'Anemometer', self.comboBox_Anemometer_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Linear_Displacement', self.comboBox_Displacement_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Horizontal_Inclinometer', self.comboBox_Hinclinometer_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Vertical_Inclinometer', self.comboBox_VInclinometer_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Frame_Strain_Gauge', self.comboBox_FSG_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Hanger_Strain_Gauge', self.comboBox_HSG_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Seismometer', self.comboBox_Seismometer_battery)
+        Add_Combo_Item(COMMON_SINGLE, 'Thermistor', self.comboBox_Thermistor_battery)
+        Add_Combo_Item(FAST, 'Frame_Vibrometer', self.comboBox_Frame_Accelerometer_battery)
+        Add_Combo_Item(FAST, 'Hanger_Vibrometer', self.comboBox_Hanger_Accelerometer_battery)
+
+        #Time Range
+        Add_Combo_Time_Range(TIME_RANGE, self.Time_Range_live)
+
+
+For retranslate_GUI
+
+    #Define description
+        Form_GUI.setWindowTitle(_translate("Form_GUI", DESC['Bridge_Name']))
+        self.label_Judul_Desc_information.setText(_translate("Form_GUI", DESC['Bridge_Name']+' Monitoring Systems'))
+        self.label_Judul_Desc_information.setText(_translate("Form_GUI", DESC['Bridge_Name']+' Monitoring Systems 123'))
+        self.label_Desc_Keterangan_information.setText(_translate("Form_GUI", DESC['General']+' '+DESC['Bridge_Name']))
+        self.label_Nomen_Girder_Desc_information.setText(_translate("Form_GUI", "Nomenclature Girder for "+DESC['Bridge_Name']))
+        self.label_Nomen_Hanger_Desc_information.setText(_translate("Form_GUI", "Nomenclature Hanger for "+DESC['Bridge_Name']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_Desc_information), _translate("Form_GUI", "Desc"))
+        self.label_Judul_ATRH_information.setText(_translate("Form_GUI", "ENVIRONTMENT SENSOR"))
+        self.label_ATRH_information.setText(_translate("Form_GUI", DESC['ATRH']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_ATRH_information), _translate("Form_GUI", "ATRH"))
+        self.label_Judul_Anemo_information.setText(_translate("Form_GUI", "ANEMOMETER"))
+        self.label_Anemo_information.setText(_translate("Form_GUI", DESC['Anemometer']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_Anemo_information), _translate("Form_GUI", "Anemo"))
+        self.label_Judul_H_Inc_information.setText(_translate("Form_GUI", "Horizontal Inclinometer"))
+        self.label_H_Inc_information.setText(_translate("Form_GUI", DESC['Horizontal_Inclinometer']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_H_Inc_information), _translate("Form_GUI", "H Inc"))
+        self.label_Judul_V_Inc_information.setText(_translate("Form_GUI", "VERTICAL INCLINOMETER"))
+        self.label_V_Inc_information.setText(_translate("Form_GUI", DESC['Vertical_Inclinometer']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_V_Inc_information), _translate("Form_GUI", "V Incl"))
+        self.label_Judul_FSG_information.setText(_translate("Form_GUI", "FRAME STRAIN GAUGE"))
+        self.label_FSG_information.setText(_translate("Form_GUI", DESC['Frame_Strain_Gauge']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_FSG_information), _translate("Form_GUI", "FSG"))
+        self.label_Judul_HSG_information.setText(_translate("Form_GUI", "HANGER STRAIN GAUGE"))
+        self.label_HSG_information.setText(_translate("Form_GUI", DESC['Hanger_Strain_Gauge']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_HSG_information), _translate("Form_GUI", "HSG"))
+        self.label_Judul_Seismo_information.setText(_translate("Form_GUI", "SEISMOMETER"))
+        self.label_Seismo_information.setText(_translate("Form_GUI", DESC['Seismometer']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_Seismo_information), _translate("Form_GUI", "Seismo"))
+        self.label_Judul_Therm_information.setText(_translate("Form_GUI", "THERMISTOR"))
+        self.label_Therm_information.setText(_translate("Form_GUI", DESC['Thermistor']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_Therm_information), _translate("Form_GUI", "Therm"))
+        self.label_Judul_FAcc_information.setText(_translate("Form_GUI", "FRAME ACCELEROMETER"))
+        self.label_FAcc_information.setText(_translate("Form_GUI", DESC['Frame_Vibrometer']))
+        self.TabWidget_information.setTabText(self.TabWidget_information.indexOf(self.tab_FAcc_information), _translate("Form_GUI", "FAcc"))
+        self.label_H_Acc_information_2.setText(_translate("Form_GUI", "HANGER ACCELEROMETER"))
+        self.label_H_Acc_information.setText(_translate("Form_GUI", DESC['Hanger_Vibrometer'])) 
+
+
+    #Define Index
+
+        self.Index = {**Add_Index(COMMON), **Add_Index(COMMON_SINGLE), **Add_Index(FAST)}
+        
+    #Define Connection
+
+        #Time Range
+        self.Time_Range_live.activated[str].connect(self.Time_Range)
+
+        #Live Tab
+        self.comboBox_ATRH_live.activated[str].connect(self.live_plot)
+        self.comboBox_Anemometer_live.activated[str].connect(self.live_plot)
+        self.comboBox_Displacement_live.activated[str].connect(self.live_plot)
+        self.comboBox_Hinclinometer_live.activated[str].connect(self.live_plot)
+        self.comboBox_VInclinometer_live.activated[str].connect(self.live_plot)
+        self.comboBox_FSG_live.activated[str].connect(self.live_plot)
+        self.comboBox_HSG_live.activated[str].connect(self.live_plot)
+        self.comboBox_Seismometer_live.activated[str].connect(self.live_plot)
+        self.comboBox_Thermistor_live.activated[str].connect(self.live_plot)
+        self.comboBox_Frame_Accelerometer_live_2.activated[str].connect(self.live_plot)
+        self.comboBox_Hanger_Accelerometer_live.activated[str].connect(self.live_plot)
+        
+        #History Tab
+        self.comboBox_ATRH_history.activated[str].connect(self.history_plot)
+        self.comboBox_Anemometer_history.activated[str].connect(self.history_plot)
+        self.comboBox_Displacement_history.activated[str].connect(self.history_plot)
+        self.comboBox_Hinclinometer_history.activated[str].connect(self.history_plot)
+        self.comboBox_VInclinometer_history.activated[str].connect(self.history_plot)
+        self.comboBox_FSG_history.activated[str].connect(self.history_plot)
+        self.comboBox_HSG_history.activated[str].connect(self.history_plot)
+        self.comboBox_Seismometer_history.activated[str].connect(self.history_plot)
+        self.comboBox_Thermistor_history.activated[str].connect(self.history_plot)
+        self.comboBox_Frame_Accelerometer_history.activated_2[str].connect(self.history_plot)
+        self.comboBox_Hanger_Accelerometer_history.activated[str].connect(self.history_plot)
+        
+        #Battery Tab
+        self.comboBox_ATRH_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Anemometer_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Displacement_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Hinclinometer_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_VInclinometer_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_FSG_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_HSG_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Seismometer_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Thermistor_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Frame_Accelerometer_battery.activated[str].connect(self.battery_plot)
+        self.comboBox_Hanger_Accelerometer_battery.activated[str].connect(self.battery_plot)
+        
+
+    #Define Function
+      
+        #Define Live Plot
+    def live_plot(self, text):
+        zero_one_Index(self.Index, text)
+        DEFAULT(text, self.Index, self.scrollAreaWidgetplot_live, self.widget_plot_live)
+        
+        #Define Time Range Plot in Live Plot
+    def Time_Range(self, text, text_time):
+        zero_one_Index(self.Index, text)
+        LIVE(text, text_time, self.Index, self.scrollAreaWidgetplot_live, self.widget_plot_live)
+        
+        #Define History Plot
+    def history_plot(self, text):
+        zero_one_Index(self.Index, text)
+        HISTORY(text, self.Index, self.timeEdit_Begin_Time_history, self.timeEdit_End_Time_history, self.dateEdit_Begin_Time_history, self.dateEdit_End_Time_history, self.scrollAreaWidgetplot_history, self.widget_plot_history)
+        
+        #Define Battery Plot
+    def battery_plot(self, text):
+        zero_one_Index(self.Index, text)
+        BATTERY(text, self.Index, self.progressBar__battery, self.lcd, self.label_nilai_battery)
+        

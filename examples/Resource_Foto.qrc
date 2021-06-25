@@ -1,0 +1,58 @@
+<RCC>
+  <qresource prefix="Logo">
+    <file>Logo Gundala1.png</file>
+  </qresource>
+  <qresource prefix="Nomenclature">
+    <file>gambar/NomenGirder.png</file>
+    <file>gambar/NomenGirder2.PNG</file>
+    <file>gambar/NomenHanger.png</file>
+  </qresource>
+  <qresource prefix="Vibrometer_Hanger">
+    <file>gambar/Vibrometer Hanger.png</file>
+  </qresource>
+  <qresource prefix="Vibrometer_Frame">
+    <file>gambar/Vibrometer Frame.png</file>
+  </qresource>
+  <qresource prefix="H_Inclinometer">
+    <file>gambar/Horizontal Inclinometer.png</file>
+  </qresource>
+  <qresource prefix="V_Inclinometer">
+    <file>gambar/Vertical Inclinometer.png</file>
+  </qresource>
+  <qresource prefix="FSG">
+    <file>gambar/Strain Gauge Frame.png</file>
+  </qresource>
+  <qresource prefix="HSG">
+    <file>gambar/Strain Gauge Hanger.png</file>
+  </qresource>
+  <qresource prefix="Seismometer">
+    <file>gambar/Seismometer.png</file>
+    <file>gambar/Seismometer1.png</file>
+    <file>gambar/Seismometer2.png</file>
+  </qresource>
+  <qresource prefix="Thermistor">
+    <file>gambar/Thermistor.PNG</file>
+    <file>gambar/Thermistor1.PNG</file>
+    <file>gambar/Thermistor2.PNG</file>
+  </qresource>
+  <qresource prefix="Rumpiang">
+    <file>Jembatan+Rumpiang.jfif</file>
+    <file>Rumpiang Bridge in Blue Hour_Muhammad Safei.JPG</file>
+    <file>Rumpiang-Bridge-Sunset.jpg</file>
+  </qresource>
+  <qresource prefix="Anemometer">
+    <file>gambar/Anemometer.PNG</file>
+    <file>gambar/Anemometer1.PNG</file>
+    <file>gambar/Anemometer2.PNG</file>
+    <file>gambar/Anemometer3.PNG</file>
+    <file>gambar/Anemometer4.PNG</file>
+  </qresource>
+  <qresource prefix="Sensor"/>
+  <qresource prefix="ATRH">
+    <file>gambar/Environtment.PNG</file>
+    <file>gambar/Environtment1.PNG</file>
+    <file>gambar/Environtment2.PNG</file>
+    <file>gambar/Environtment3.PNG</file>
+    <file>gambar/Environtment4.PNG</file>
+  </qresource>
+</RCC>
