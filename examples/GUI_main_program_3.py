@@ -14,8 +14,10 @@ LIVE = GUI_Function.Set_Live_Plot
 HISTORY = GUI_Function.Set_History_plot
 BATTERY = GUI_Function.Set_Battery_plot
 
+DUMMY_MULTI_LIVE = GUI_Function.Set_Dummy_plot_multi_live
 DUMMY_SINGLE_LIVE = GUI_Function.Set_Dummy_plot_single_live
 DUMMY_SINGLE_HISTORY = GUI_Function.Set_Dummy_plot_single_history
+DUMMY_MULTI_HISTORY = GUI_Function.Set_Dummy_plot_multi_history
 DUMMY_BATTERY = GUI_Function.Set_Dummy_plot_battery
 
 from GUI import GUI_Config
@@ -3174,7 +3176,7 @@ class Ui_Form_GUI(object):
         self.Time_Range_live.activated[str].connect(self.Time_Range)
 
         #Live Tab
-        self.comboBox_ATRH_live.activated[str].connect(self.Dummy_live_plot)
+        self.comboBox_ATRH_live.activated[str].connect(self.Dummy_live_plot_multi)
         self.comboBox_Anemometer_live.activated[str].connect(self.Dummy_live_plot)
         self.comboBox_Displacement_live.activated[str].connect(self.Dummy_live_plot)
         self.comboBox_Hinclinometer_live.activated[str].connect(self.Dummy_live_plot)
@@ -3239,6 +3241,12 @@ class Ui_Form_GUI(object):
         BATTERY(text, self.Index, self.progressBar__battery, self.lcd, self.label_nilai_battery)
 
 
+    
+    
+    def Dummy_live_plot_multi(self, text):
+        print(zero_one_Index(self.Index, text))
+        print('Multi Plot is activated')
+        DUMMY_MULTI_LIVE(self.Layout_plot_live, self.scrollAreaWidgetplot_live, self.Layout_plot_live_2, self.Frame_live_1)
 
         #Define Dummy Live Plot
     def Dummy_live_plot(self, text):

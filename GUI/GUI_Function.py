@@ -65,13 +65,17 @@ def Add_value(list, sensor):
         list.append(sensor[key])
 
 #Add Frame Into Scroll bar Area widget (The Frame must be new name)
-def Add_Frame(layout, Frame, scroll_widget):
+def Add_Frame(layout, Frame, scroll_widget, widget):
     Frame = QtWidgets.QFrame(scroll_widget)
     Frame.setMinimumSize(QtCore.QSize(0, 676))
     Frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
     Frame.setFrameShadow(QtWidgets.QFrame.Raised)
-    Frame.setObjectName(str(Frame))
-    layout.addWidget(Frame)
+    Frame.setObjectName("Frame_plot_live")
+
+    layout = QtWidgets.QVBoxLayout(Frame)
+    widget = QtWidgets.QWidget()
+    layout.addWidget(widget)
+
 
 
 #Erase Widget in layout
@@ -263,19 +267,20 @@ def Set_Dummy_plot_single_live(layout, widget):
     Plot_widget_dummy(Dummy_plot_Common_live, widget, layout)
 
 #Set Dummy Plot Live
-def Set_Dummy_plot_multi_live(layout_1, widget_1, Frame_1, Frame_2, layout_2, widget_2, layout_3, widget_3, scroll_widget):
+def Set_Dummy_plot_multi_live(scroll_widget, layout, Frame):
     
-    Erase_Widget(layout_1)
-
     Add_Frame(layout_2, Frame_1, scroll_widget)
 
-    Add_Frame(layout_3, Frame_2, scroll_widget)
+    # Add_Frame(layout_3, Frame_2, scroll_widget)
 
-    Plot_widget_dummy(Dummy_plot_Common_live, widget_1, layout_1)
+    # Plot_widget_dummy(Dummy_plot_Common_live, widget_1, layout_1)
 
-    Plot_widget_dummy(Dummy_plot_Common_live, widget_2, layout_2)
+    # Plot_widget_dummy(Dummy_plot_Common_live, widget_2, layout_2)
 
-    Plot_widget_dummy(Dummy_plot_Common_live, widget_3, layout_3)
+    # Plot_widget_dummy(Dummy_plot_Common_live, widget_3, layout_3)
+    
+    
+    
 
 
 
